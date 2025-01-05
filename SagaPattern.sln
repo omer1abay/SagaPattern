@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SagaPattern.Orchestration", "SagaPattern.Orchestration", "{F60D6008-305A-4A68-959B-668EA3119540}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SagaPattern.Choreography", "SagaPattern.Choreography", "{A478B098-DEE7-4C50-B1A9-A2E99C2C9479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.Shared", "SagaPattern.Orchestration\SagaPattern.Orchestration.Shared\SagaPattern.Orchestration.Shared.csproj", "{BEB274A9-B65C-4653-8731-1D11B71D0D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.OrchestratorService", "SagaPattern.Orchestration\SagaPattern.Orchestration.OrchestratorService\SagaPattern.Orchestration.OrchestratorService.csproj", "{5B3B409E-0692-438F-A0F7-5DA4E279A86D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.AppHost", "SagaPattern.AppHost\SagaPattern.AppHost.csproj", "{480C0EE1-ECDE-4255-BCBE-E3E2D5D7DED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.ServiceDefaults", "SagaPattern.ServiceDefaults\SagaPattern.ServiceDefaults.csproj", "{3BEC90C3-A343-4061-9D7C-2F68939D5298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.OrderService", "SagaPattern.Orchestration\SagaPattern.Orchestration.OrderService\SagaPattern.Orchestration.OrderService.csproj", "{3382F0FD-29A3-4A7C-B575-8FF55B70C265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.PaymentService", "SagaPattern.Orchestration\SagaPattern.Orchestration.PaymentService\SagaPattern.Orchestration.PaymentService.csproj", "{005489D1-6806-4B64-BA09-B35AD3B43477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.ProductService", "SagaPattern.Orchestration\SagaPattern.Orchestration.ProductService\SagaPattern.Orchestration.ProductService.csproj", "{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEB274A9-B65C-4653-8731-1D11B71D0D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB274A9-B65C-4653-8731-1D11B71D0D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB274A9-B65C-4653-8731-1D11B71D0D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB274A9-B65C-4653-8731-1D11B71D0D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3B409E-0692-438F-A0F7-5DA4E279A86D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3B409E-0692-438F-A0F7-5DA4E279A86D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3B409E-0692-438F-A0F7-5DA4E279A86D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3B409E-0692-438F-A0F7-5DA4E279A86D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480C0EE1-ECDE-4255-BCBE-E3E2D5D7DED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480C0EE1-ECDE-4255-BCBE-E3E2D5D7DED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480C0EE1-ECDE-4255-BCBE-E3E2D5D7DED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480C0EE1-ECDE-4255-BCBE-E3E2D5D7DED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEC90C3-A343-4061-9D7C-2F68939D5298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEC90C3-A343-4061-9D7C-2F68939D5298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEC90C3-A343-4061-9D7C-2F68939D5298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEC90C3-A343-4061-9D7C-2F68939D5298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3382F0FD-29A3-4A7C-B575-8FF55B70C265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3382F0FD-29A3-4A7C-B575-8FF55B70C265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3382F0FD-29A3-4A7C-B575-8FF55B70C265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3382F0FD-29A3-4A7C-B575-8FF55B70C265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005489D1-6806-4B64-BA09-B35AD3B43477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005489D1-6806-4B64-BA09-B35AD3B43477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005489D1-6806-4B64-BA09-B35AD3B43477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005489D1-6806-4B64-BA09-B35AD3B43477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEB274A9-B65C-4653-8731-1D11B71D0D01} = {F60D6008-305A-4A68-959B-668EA3119540}
+		{5B3B409E-0692-438F-A0F7-5DA4E279A86D} = {F60D6008-305A-4A68-959B-668EA3119540}
+		{3382F0FD-29A3-4A7C-B575-8FF55B70C265} = {F60D6008-305A-4A68-959B-668EA3119540}
+		{005489D1-6806-4B64-BA09-B35AD3B43477} = {F60D6008-305A-4A68-959B-668EA3119540}
+		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985} = {F60D6008-305A-4A68-959B-668EA3119540}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47393979-C48D-4161-A5A6-D0E6401A18A8}
+	EndGlobalSection
+EndGlobal

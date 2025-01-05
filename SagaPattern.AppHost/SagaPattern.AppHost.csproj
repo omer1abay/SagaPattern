@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>b2aa20e2-3f70-4a58-87f9-60e7c55420d2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SagaPattern.Orchestration\SagaPattern.Orchestration.OrchestratorService\SagaPattern.Orchestration.OrchestratorService.csproj" />
+    <ProjectReference Include="..\SagaPattern.Orchestration\SagaPattern.Orchestration.OrderService\SagaPattern.Orchestration.OrderService.csproj" />
+    <ProjectReference Include="..\SagaPattern.Orchestration\SagaPattern.Orchestration.PaymentService\SagaPattern.Orchestration.PaymentService.csproj" />
+    <ProjectReference Include="..\SagaPattern.Orchestration\SagaPattern.Orchestration.ProductService\SagaPattern.Orchestration.ProductService.csproj" />
+  </ItemGroup>
+
+</Project>
