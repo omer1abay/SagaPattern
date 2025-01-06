@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SagaPattern.Orchestration.Shared.Messages
 {
-    internal class ProductStockReservePendingMessage
+    public class ProductStockReservePendingMessage : IMessage
     {
+        public Guid OrderId { get; set; }
+        public Guid PaymentId { get; set; }
+        public List<Guid> Guids { get; set; }
     }
 }

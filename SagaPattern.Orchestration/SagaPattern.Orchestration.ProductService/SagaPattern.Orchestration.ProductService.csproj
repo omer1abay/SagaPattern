@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.RabbitMQ.Client" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\SagaPattern.ServiceDefaults\SagaPattern.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\SagaPattern.Orchestration.Shared\SagaPattern.Orchestration.Shared.csproj" />
   </ItemGroup>
 
 </Project>

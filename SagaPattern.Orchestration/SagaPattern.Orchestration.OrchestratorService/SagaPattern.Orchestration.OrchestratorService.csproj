@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SagaPattern.ServiceDefaults\SagaPattern.ServiceDefaults.csproj" />
+    <PackageReference Include="Aspire.RabbitMQ.Client" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Consumers\" />
+    <ProjectReference Include="..\..\SagaPattern.ServiceDefaults\SagaPattern.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\SagaPattern.Orchestration.Shared\SagaPattern.Orchestration.Shared.csproj" />
   </ItemGroup>
 
 </Project>

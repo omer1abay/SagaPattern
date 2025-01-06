@@ -1,4 +1,5 @@
-﻿using SagaPattern.Orchestration.OrderService.Models;
+﻿using RabbitMQ.Client;
+using SagaPattern.Orchestration.OrderService.Models;
 
 namespace SagaPattern.Orchestration.OrderService.Services
 {

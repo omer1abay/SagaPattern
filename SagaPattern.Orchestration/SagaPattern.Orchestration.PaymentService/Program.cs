@@ -1,6 +1,12 @@
+using SagaPattern.Orchestration.PaymentService.Consumer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+
+builder.AddRabbitMQClient("messaging");
+
+builder.Services.AddHostedService<MessageConsumer>();
 
 // Add services to the container.
 

@@ -1,0 +1,71 @@
+﻿
+using Newtonsoft.Json;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+using SagaPattern.Orchestration.Shared;
+using SagaPattern.Orchestration.Shared.Messages;
+using System.Text;
+
+namespace SagaPattern.Orchestration.PaymentService.Consumer;
+
+public class MessageConsumer : BackgroundService
+{
+    private readonly IServiceProvider _serviceProvider;
+    private EventingBasicConsumer _consumer;
+    private IConnection? _messageConnection;
+    private IModel? _messageChannel;
+
+    public MessageConsumer(IServiceProvider serviceProvider, IConnection? messageConnection)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        string queueName = "payment-pending";
+
+        _messageConnection = _serviceProvider.GetRequiredService<IConnection>();
+
+        _messageChannel = _messageConnection.CreateModel();
+        _messageChannel.QueueDeclare(queue: queueName,
+            durable: false,
+            exclusive: false,
+            autoDelete: false,
+            arguments: null);
+
+        _consumer = new EventingBasicConsumer(_messageChannel);
+        _consumer.Received += ProcessMessageAsync;
+
+        _messageChannel.BasicConsume(queue: queueName,
+            autoAck: true,
+            consumer: _consumer);
+
+        return Task.CompletedTask;
+    }
+
+    private void ProcessMessageAsync(object sender, BasicDeliverEventArgs e)
+    {
+        string message = Encoding.UTF8.GetString(e.Body.ToArray());
+        PaymentPendingMessage paymentPendingMessage = JsonConvert.DeserializeObject<PaymentPendingMessage>(message)!;
+
+        //do payment
+        //end of payment process
+
+        PaymentCompletedMessage paymentCompletedMessage = new()
+        {
+            IsCompleted = true,
+            OrderId = paymentPendingMessage.OrderId,
+            PaymentId = Guid.NewGuid(),
+            ProductIds = paymentPendingMessage.ProductIds
+        };
+
+        SendMessageToQueue(paymentCompletedMessage);
+    }
+
+    private void SendMessageToQueue(IMessage message)
+    {
+        // Send message
+        MessageSender.SendMessage("payment-completed", message, _messageConnection);
+
+    }
+}

@@ -12,9 +12,9 @@ namespace SagaPattern.Orchestration.OrderService.Models
             TotalAmount = products.Sum(p => p.Price * p.Quantity);
         }
 
-        public Guid Id { get; set; }
-        public required List<Product> Products { get; set; }
-        public required CardInformation CardInformation { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public List<Product> Products { get; set; }
+        public CardInformation CardInformation { get; set; }
         public decimal TotalAmount { get; }
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
     }
