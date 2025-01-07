@@ -47,12 +47,16 @@ namespace SagaPattern.Orchestration.OrchestratorService.Consumers
         {
             string message = Encoding.UTF8.GetString(e.Body.ToArray());
             ProductStockReservedMessage orderReceivedMessage = JsonConvert.DeserializeObject<ProductStockReservedMessage>(message)!;
+
+            if (!orderReceivedMessage.IsCompleted)
+                SendMessageToQueue(orderReceivedMessage);
+
         }
 
         private void SendMessageToQueue(IMessage message)
         {
             // Send message
-            MessageSender.SendMessage("payment-pending", message, _messageConnection);
+            MessageSender.SendMessage("payment-pending", MessageType.ProductReserveFailed.ToString() ,message, _messageConnection);
         }
     }
 }

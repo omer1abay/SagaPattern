@@ -63,7 +63,7 @@ public class OrderConsumer : BackgroundService
     private void SendMessageToQueue(IMessage message)
     {
         // Send message
-        MessageSender.SendMessage("payment-pending", message, _messageConnection);
+        MessageSender.SendMessage("payment-pending", MessageType.PaymentPending.ToString(), message, _messageConnection);
 
 
     }

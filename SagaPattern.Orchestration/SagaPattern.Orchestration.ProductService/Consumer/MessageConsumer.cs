@@ -51,7 +51,7 @@ namespace SagaPattern.Orchestration.ProductService.Consumer
             ProductStockReservedMessage productStockReservedMessage = new()
             {
                 PaymentId = productStockReservePendingMessage.PaymentId,
-                IsCompleted = true,
+                IsCompleted = false,
                 OrderId = productStockReservePendingMessage.OrderId,
             };
 

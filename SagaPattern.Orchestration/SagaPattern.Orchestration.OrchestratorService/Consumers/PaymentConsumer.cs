@@ -45,6 +45,7 @@ namespace SagaPattern.Orchestration.OrchestratorService.Consumers
 
         private void ProcessMessageAsync(object sender, BasicDeliverEventArgs e)
         {
+            IMessage sendingMessage;
             string message = Encoding.UTF8.GetString(e.Body.ToArray());
             PaymentCompletedMessage paymentCompletedMessage = JsonConvert.DeserializeObject<PaymentCompletedMessage>(message)!;
 
@@ -55,15 +56,16 @@ namespace SagaPattern.Orchestration.OrchestratorService.Consumers
                 Guids = paymentCompletedMessage.ProductIds
             };
 
-            SendMessageToQueue(productStockReservePendingMessage);
+            var queueName = paymentCompletedMessage.IsCompleted ? "product-reserve-pending" : "payment-canceled";
+            sendingMessage = paymentCompletedMessage.IsCompleted ? productStockReservePendingMessage : paymentCompletedMessage;
+
+            SendMessageToQueue(sendingMessage, queueName);
         }
 
-        private void SendMessageToQueue(IMessage message)
+        private void SendMessageToQueue(IMessage message, string queueName)
         {
             // Send message
-            MessageSender.SendMessage("product-reserve-pending", message, _messageConnection);
-
-
+            MessageSender.SendMessage(queueName, message, _messageConnection);
         }
     }
 }
