@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Orchestration.ProductService", "SagaPattern.Orchestration\SagaPattern.Orchestration.ProductService\SagaPattern.Orchestration.ProductService.csproj", "{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaPattern.Choreography.Shared", "SagaPattern.Choreography\SagaPattern.Choreography.Shared\SagaPattern.Choreography.Shared.csproj", "{1DE5909E-CB24-49C7-A674-98F066D229E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE5909E-CB24-49C7-A674-98F066D229E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE5909E-CB24-49C7-A674-98F066D229E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE5909E-CB24-49C7-A674-98F066D229E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE5909E-CB24-49C7-A674-98F066D229E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{3382F0FD-29A3-4A7C-B575-8FF55B70C265} = {F60D6008-305A-4A68-959B-668EA3119540}
 		{005489D1-6806-4B64-BA09-B35AD3B43477} = {F60D6008-305A-4A68-959B-668EA3119540}
 		{B5DE8F9A-8296-4DA1-9AF0-EEF5D3026985} = {F60D6008-305A-4A68-959B-668EA3119540}
+		{1DE5909E-CB24-49C7-A674-98F066D229E9} = {A478B098-DEE7-4C50-B1A9-A2E99C2C9479}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47393979-C48D-4161-A5A6-D0E6401A18A8}
